@@ -4,7 +4,7 @@ class CellManager(private val generator: CellGenerator) {
 
     private val cells = mutableListOf<Cell>()
 
-    fun getCells(): List<Cell> = listOf(*cells.toTypedArray())
+    fun getCells(): List<Cell> = cells.toList()
 
     fun createNewCell() {
         val cell = generator.getLivingOrDead()
@@ -23,15 +23,7 @@ class CellManager(private val generator: CellGenerator) {
     private fun isLastThreeCellsAre(cellType: CellType): Boolean {
         if (cells.size < 3) return false
 
-        val lastCells = cells.takeLast(3)
-
-        for (cell in lastCells) {
-            if (cell.type != cellType) {
-                return false
-            }
-        }
-
-        return true
+        return cells.takeLast(3).all { it.type == cellType }
     }
 
     private fun addLifeCell() {
@@ -39,6 +31,8 @@ class CellManager(private val generator: CellGenerator) {
     }
 
     private fun killLifeCells() {
+        if (cells.size < 4) return
+
         var index = cells.lastIndex - 3
         var cell = cells[index]
 

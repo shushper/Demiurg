@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shushper.demiurg.databinding.ActivityMainBinding
 import com.shushper.demiurg.extensions.observe
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val viewModel: MainViewModel by stateViewModel()
-    private val cellsAdapter: CellsAdapter =
-        CellsAdapter()
+    private val viewModel: MainViewModel by viewModel()
+    private val cellsAdapter: CellsAdapter by inject()
 
     private lateinit var binding: ActivityMainBinding
 

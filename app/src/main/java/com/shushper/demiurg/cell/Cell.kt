@@ -15,10 +15,6 @@ data class Cell(val type: CellType) {
     val isLife: Boolean
         get() = type == CellType.LIFE
 
-    val isLiving: Boolean
-        get() = type == CellType.LIVING
-
-
     @DrawableRes
     fun getIconBackgroundRes(): Int {
         return when(type) {

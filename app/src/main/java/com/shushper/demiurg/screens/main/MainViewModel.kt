@@ -2,12 +2,11 @@ package com.shushper.demiurg.screens.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.shushper.demiurg.cell.Cell
 import com.shushper.demiurg.cell.CellManager
 
-class MainViewModel(val handle: SavedStateHandle, private val cellManager: CellManager) :
+class MainViewModel(private val cellManager: CellManager) :
     ViewModel() {
 
 
