@@ -1,16 +1,24 @@
 package com.shushper.demiurg
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.shushper.demiurg.cell.Cell
+import com.shushper.demiurg.cell.CellManager
 
-class MainViewModel : ViewModel() {
+class MainViewModel(val handle: SavedStateHandle, private val cellManager: CellManager) :
+    ViewModel() {
 
-    init {
-        Log.d("MainViewModel", "init")
-    }
 
-    fun onCreateClick() {
-        Log.d("MainViewModel", "onCreateClick")
+    private val cellsLiveData = MutableLiveData<List<Cell>>()
+    val cells: LiveData<List<Cell>>
+        get() = cellsLiveData
+
+
+    fun onCrateBtnClick() {
+        cellManager.createNewCell()
+        cellsLiveData.value = cellManager.getCells()
     }
 
 }

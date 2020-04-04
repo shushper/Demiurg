@@ -3,4 +3,18 @@
 
     <string name="main_title">Клеточное наполнение</string>
     <string name="main_create_btn">Сотворить</string>
+
+    <string name="cell_icon_dead">💀</string>
+    <string name="cell_icon_living">💥</string>
+    <string name="cell_icon_life">🐣</string>
+
+    <string name="cell_title_dead">Мертвая</string>
+    <string name="cell_title_living">Живая</string>
+    <string name="cell_title_life">Жизнь</string>
+
+    <string name="cell_subtitle_dead">или прикидывается</string>
+    <string name="cell_subtitle_living">и шевелится!</string>
+    <string name="cell_subtitle_life">Ку-ку!</string>
+
+
 </resources>
