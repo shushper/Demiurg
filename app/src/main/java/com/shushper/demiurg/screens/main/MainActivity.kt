@@ -1,4 +1,4 @@
-package com.shushper.demiurg
+package com.shushper.demiurg.screens.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

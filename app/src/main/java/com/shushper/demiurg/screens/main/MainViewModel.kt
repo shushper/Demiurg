@@ -1,4 +1,4 @@
-package com.shushper.demiurg
+package com.shushper.demiurg.screens.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
